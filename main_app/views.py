@@ -10,4 +10,8 @@ class Subscriber(CreateView):
   model = Subscriber
   fields = "__all__"
 
+def dashboard(request):
+  pass
 
+def confirmation(request):
+  pass
