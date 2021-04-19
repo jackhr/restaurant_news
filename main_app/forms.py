@@ -6,4 +6,3 @@ class SubscriberForm(ModelForm):
         model = Subscriber
         fields = ['__all__']
 
-        
