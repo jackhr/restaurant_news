@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<canvas id="myChart"></canvas>
 
 {% for s in subs %}
     {%  if s.placename not in citylookup %}
@@ -20,4 +21,5 @@
 {% endfor %}
 
 
-{% endblock %}
+
+      {% endblock %}
