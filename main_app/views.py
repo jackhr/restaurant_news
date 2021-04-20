@@ -18,11 +18,11 @@ headers = {
 }
 
 def home(request):
-  return HttpResponse("Hello, world. You're at the Restaurant News Subscriber Network.")
+  return render(request, 'home.html')
 
 class SubscriberCreate(CreateView):
   model = Subscriber
-  fields = '__all__'
+  fields = ['first_name', 'last_name', 'email', 'zipcode', 'special_date', 'special_date_name', 'phone', 'frequency']
 
 def dashboard(request):
   subs = Subscriber.objects.all()

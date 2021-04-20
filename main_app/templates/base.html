@@ -1,23 +1,38 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Restaurant News</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-  <header>
+  <header class="navbar-fixed">
     <nav>
-
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="/" class="left brand-logo"><img class="logo" src="">LOGO</a></li>
+        </ul>
+        <ul class="right">
+          <li><a href="">Menu</a></li>
+          <li><a href="">About Us</a></li>
+            <li><a href="{% url 'subscribers_create' %}">Sign Up</a></li>
+    
+        </ul>
+      </div>
     </nav>
   </header>
-  <main>
+  <main class="container">
     {% block content %}
     {% endblock %}
   </main>
-  <footer>
+  <footer class="page-footer">
     
   </footer>
 </body>
