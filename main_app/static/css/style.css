@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #C6C1B9;
+}
+nav {
+    background-color:#7f90a9;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, [col] 1fr);
+  grid-template-rows: repeat(12, [row] 1fr);
+  column-gap: 15px;
+  margin: 50px auto;
+}
+
+footer.page-footer {
+  padding-top: 0;
+  text-align: right;
+}
+
+.subscriber-form {
+  border: black solid;
+  float: left;
+  grid-column: col / span 7;
+  grid-row: row / span -1;
+}
+.image-sign-up {
+    grid-column: 8 / span 4;
+}
+.image-sign-up > img {
+    width: 127%
+}
