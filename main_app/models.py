@@ -30,4 +30,7 @@ class Subscriber(models.Model):
         choices=FREQUENCY,
         default=[0][0]
     )
-
+    placename = models.CharField(
+      max_length=50,
+      default='None'
+    )

@@ -20,6 +20,15 @@ class SubscriberCreate(CreateView):
   fields = '__all__'
 
 def dashboard(request):
+  subs = Subscriber.objects.all()
+  for sub in subs:
+    url = f"https://community-zippopotamus.p.rapidapi.com/us/{sub.zipcode}"
+    response = requests.request("GET", url, headers=headers)
+    results = response.json()
+    place = results['places'][0]['place name']
+    state = results['places'][0]['state']
+    sub.placename = f'{place}, {state}'
+
 
   pass
 
