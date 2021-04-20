@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<canvas id="myChart"></canvas>
-
+<canvas id="myChart" alt="Pie graph representing the amount of people who have subscribed catagorized by the cities of Seattle, Bellevue, Tacoma, Shorline, and Other"></canvas>
+<img src="../static/media/active-and-cancellations.svg" style="height: 200px;" alt="Graph representing total number of subscribers.">
+<img src="../static/media/redeem-coupons.svg" style="height: 200px;" alt="Graph representing amount of redeemed coupons">
 {% for s in subs %}
 
   <div>
