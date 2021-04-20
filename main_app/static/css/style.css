@@ -1,11 +1,12 @@
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background-color: #C6C1B9;
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #C6C1B9;
+    font-family: 'Roboto', sans-serif;
+  }
 nav {
-    background-color:#a9937f;
+    background-color:#7f90a9;
 }
 .container {
   display: grid;
@@ -38,16 +39,34 @@ footer.page-footer {
 }
 
 .subscriber-form {
-  border: black solid;
-  float: left;
-  grid-column: col / span 7;
-  grid-row: row / span -1;
-}
+    border: black solid 1px;
+    float: left;
+    grid-column: col / span 7;
+    grid-row: row / span 0;
+    padding: 20px;
+  }
 .image-sign-up {
     grid-column: 8 / span 4;
 }
 .image-sign-up > img {
-    width: 127%
+    width: 127%;
+    border: black solid 1px;
+}
+#id_first_name, #id_last_name, #id_email, #id_phone, #id_zipcode {
+    width: 90%;
+    background-color:#7f90a9;
+    height: 25px;
+    display: block;
+}
+
+ul {
+    margin-left: 1rem;
+    list-style-type: decimal;
+}
+input.btn-flat {
+  background-color: #7f90a9;
+  border-radius: .5rem;
+
 }
 
 .hero-img {
@@ -61,3 +80,25 @@ footer.page-footer {
 .reservations {
   grid-column: 7 /span 6;
 }
+
+@media only screen and (max-width: 900px) {
+    .subscriber-form {
+        border: black solid 1px;
+        float: left;
+        grid-column: col / span 8;
+        grid-row: row / span 0;
+        padding: 20px;
+    }
+    .image-sign-up {
+        grid-column: 9 / span 5;
+        float: right;
+    }
+    
+    #id_first_name, #id_last_name, #id_email, #id_phone, #id_zipcode {
+        width: 100%;
+    }
+    .image-sign-up > img {
+        width: 95%;
+        border: black solid 1px;
+    }
+      }
