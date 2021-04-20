@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 OCCASIONS = (
     ('B', 'Birthday'),
@@ -34,3 +35,6 @@ class Subscriber(models.Model):
       max_length=50,
       default='None'
     )
+
+    def get_absolute_url(self):
+        return reverse('home')

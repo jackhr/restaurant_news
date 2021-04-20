@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for s in subs %}
+    {%  if s.placename not in citylookup %}
+        <p>WEEEEEEEE</p>
+    {% endif %}
+    <p>{{s.first_name}}</p>
+    <p>{{s.last_name}}</p>
+    <p>{{s.email}}</p>
+    <p>{{s.zipcode}}</p>
+    <p>{{s.special_date}}</p>
+    <p>{{s.special_date_name}}</p>
+    <p>{{s.phone}}</p>
+    <p>{{s.frequency}}</p>
+    <p>{{s.placename}}</p>
+
+
+{% endfor %}
+
+
+{% endblock %}
