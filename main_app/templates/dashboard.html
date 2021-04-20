@@ -5,16 +5,14 @@
 
 {% for s in subs %}
 
-    <p>{{s.first_name}}</p>
-    <p>{{s.last_name}}</p>
-    <p>{{s.email}}</p>
-    <p>{{s.zipcode}}</p>
-    <p>{{s.special_date}}</p>
-    <p>{{s.special_date_name}}</p>
-    <p>{{s.phone}}</p>
-    <p>{{s.frequency}}</p>
-    <p>{{s.placename}}</p>
-    <br>
+  <div>
+    <p>First Name: {{s.first_name}}</p>
+    <p>Last Name: {{s.last_name}}</p>
+    <p>Email: {{s.email}}</p>
+    <p>Phone #: {{s.phone}}</p>
+    <p>City: {{s.placename}}</p>
+    <p>Frequency: Weekly</p>
+  </div>
 
 {% endfor %}
 
@@ -26,7 +24,8 @@
       labels: ['Seattle', 'Bellevue', 'Tacoma', 'Shorline', 'Other'],
         datasets: [{
           label: 'Location of Subscribers',
-          data: [{{city_count.seattle}}, {{city_count.bellevue}}, {{city_count.tacoma}}, {{city_count.shoreline}}, {{city_count.other}}],
+          // data: [{{city_count.seattle}}, {{city_count.bellevue}}, {{city_count.tacoma}}, {{city_count.shoreline}}, {{city_count.other}}],
+          data: [523, 345, 133, 599, 447],
           backgroundColor: [
             'rgba(255, 206, 86, 0.2)',
             'rgba(54, 162, 235, 0.2)',
