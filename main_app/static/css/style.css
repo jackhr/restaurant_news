@@ -5,7 +5,7 @@ body {
   background-color: #C6C1B9;
 }
 nav {
-    background-color:#7f90a9;
+    background-color:#a9937f;
 }
 .container {
   display: grid;
@@ -13,6 +13,23 @@ nav {
   grid-template-rows: repeat(12, [row] 1fr);
   column-gap: 15px;
   margin: 50px auto;
+}
+.card-content > img {
+  width: 175px;
+  margin: 20px 0;
+}
+.card, .card-content {
+  height: 50vmin;
+  width: 50vmin;
+}
+
+.card-content {
+  overflow: auto;
+  text-align: center;
+}
+
+.card {
+  margin-bottom: 50px;
 }
 
 footer.page-footer {
@@ -31,4 +48,16 @@ footer.page-footer {
 }
 .image-sign-up > img {
     width: 127%
+}
+
+.hero-img {
+  grid-column: 0 / span 12;
+}
+
+.now-open {
+  grid-column: 0 / span 6;
+}
+
+.reservations {
+  grid-column: 7 /span 6;
 }
