@@ -5,7 +5,12 @@ import requests
 
 from .models import Subscriber
 
-
+CITYLOOKUP = (
+  'Bellevue',
+  'Tacoma', 
+  'Seattle',
+  'Shoreline'
+)
 
 headers = {
   'x-rapidapi-key': "b1556901c0mshdb68c001ae12d6ap1d57e6jsnad1a723950e1",
@@ -26,11 +31,12 @@ def dashboard(request):
     response = requests.request("GET", url, headers=headers)
     results = response.json()
     place = results['places'][0]['place name']
-    state = results['places'][0]['state']
-    sub.placename = f'{place}, {state}'
+    sub.placename = place
+  return render(request, 'dashboard.html', {
+    'subs' : subs,
+    'citylookup' : CITYLOOKUP
+  })
 
-
-  pass
 
 def confirmation(request):
   pass
