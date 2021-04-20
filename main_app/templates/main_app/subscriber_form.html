@@ -2,11 +2,12 @@
 
 {% block content %}
 
-<form action="confirmation/" enctype="multipart/form-data" method="POST">
+<form action="{% url 'subscribers_create' %}" enctype="multipart/form-data" method="POST">
   {% csrf_token %}
   {{form.as_p}}
   <input type="submit" value="Yes!" class="">
 </form>
+
 
 
 {% endblock %}
