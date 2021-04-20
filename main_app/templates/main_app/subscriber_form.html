@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="" enctype="multipart/form-data" method="POST">
+<form action="confirmation/" enctype="multipart/form-data" method="POST">
   {% csrf_token %}
   {{form.as_p}}
   <input type="submit" value="Yes!" class="">
