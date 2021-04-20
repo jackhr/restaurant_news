@@ -2,18 +2,23 @@
 
 {% block content %}
 <canvas id="myChart" alt="Pie graph representing the amount of people who have subscribed catagorized by the cities of Seattle, Bellevue, Tacoma, Shorline, and Other"></canvas>
+<br><br>
 <img src="../static/media/active-and-cancellations.svg" style="height: 200px;" alt="Graph representing total number of subscribers.">
 <img src="../static/media/redeem-coupons.svg" style="height: 200px;" alt="Graph representing amount of redeemed coupons">
+<br><br><br><hr><br>
 {% for s in subs %}
 
   <div>
     <p>First Name: {{s.first_name}}</p>
     <p>Last Name: {{s.last_name}}</p>
     <p>Email: {{s.email}}</p>
+    <p>Date: {{s.special_date}}</p>
+    <p>Occasion: {{s.get_special_date_name_display}}</p>
     <p>Phone #: {{s.phone}}</p>
     <p>City: {{s.placename}}</p>
-    <p>Frequency: Weekly</p>
+    <p>Frequency: {{s.get_frequency_display}}</p>
   </div>
+  <br><hr><br>
 
 {% endfor %}
 
@@ -25,8 +30,8 @@
       labels: ['Seattle', 'Bellevue', 'Tacoma', 'Shorline', 'Other'],
         datasets: [{
           label: 'Location of Subscribers',
-          // data: [{{city_count.seattle}}, {{city_count.bellevue}}, {{city_count.tacoma}}, {{city_count.shoreline}}, {{city_count.other}}],
-          data: [523, 345, 133, 599, 447],
+          data: [{{city_count.seattle}}, {{city_count.bellevue}}, {{city_count.tacoma}}, {{city_count.shoreline}}, {{city_count.other}}],
+          // data: [523, 345, 133, 599, 447],
           backgroundColor: [
             'rgba(255, 206, 86, 0.2)',
             'rgba(54, 162, 235, 0.2)',

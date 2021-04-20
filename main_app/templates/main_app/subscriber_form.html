@@ -20,4 +20,18 @@
   </ul>
 </aside>
 
+<script>
+  const dateEl = document.getElementById('id_special_date');
+M.Datepicker.init(dateEl, {
+format: 'yyyy-mm-dd',
+defaultDate: new Date(),
+setDefaultDate: true,
+autoClose: true
+});
+const dateNameEl = document.getElementById('id_special_date_name');
+M.FormSelect.init(dateNameEl);
+const frequencySelectEl = document.getElementById('id_frequency');
+M.FormSelect.init(frequencySelectEl);
+</script>
+
 {% endblock %}
