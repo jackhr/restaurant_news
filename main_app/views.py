@@ -39,4 +39,4 @@ def dashboard(request):
 
 
 def confirmation(request):
-  pass
+  return render(request, 'confirmation.html')
