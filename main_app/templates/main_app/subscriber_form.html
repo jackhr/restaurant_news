@@ -2,19 +2,22 @@
 
 {% block content %}
 <div class="subscriber-form">
+  <h5>Sign Up Information</h5>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p> <br>
 <form action="{% url 'subscribers_create' %}" enctype="multipart/form-data" method="POST">
   {% csrf_token %}
   {{form.as_p}}
-  <input type="submit" value="Yes!" class="">
+  <input type="submit" value="Sign Up Now!" class="btn-flat">
 </form>
 </div>
 <aside class="image-sign-up">
-  <img src="https://i.imgur.com/BGmpEG6.png" alt="">
-  <figcaption>gdgdgsdg</figcaption>
-  <p>gfghsdgd
-    dgdsgd
-    gdsgdg
-  </p>
+  <img src="https://i.imgur.com/BGmpEG6.png" alt="female chef arms folded, smiling next to a table in traditional farm style restaurant">
+  <figcaption><h5>Get with the program</h5><p>Condimentum sapien, dui dictum facilis mattis.</p></figcaption>
+  <ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum dolor sit amet</li>
+  </ul>
 </aside>
 
 {% endblock %}
