@@ -4,9 +4,7 @@
 <canvas id="myChart"></canvas>
 
 {% for s in subs %}
-    {%  if s.placename not in citylookup %}
-        <p>WEEEEEEEE</p>
-    {% endif %}
+
     <p>{{s.first_name}}</p>
     <p>{{s.last_name}}</p>
     <p>{{s.email}}</p>
@@ -16,10 +14,10 @@
     <p>{{s.phone}}</p>
     <p>{{s.frequency}}</p>
     <p>{{s.placename}}</p>
-
+    <br>
 
 {% endfor %}
-{{city_count.bellevue}}
+
 <script>
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {

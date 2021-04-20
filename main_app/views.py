@@ -5,13 +5,6 @@ import requests
 
 from .models import Subscriber
 
-CITYLOOKUP = (
-  'Bellevue',
-  'Tacoma', 
-  'Seattle',
-  'Shoreline'
-)
-
 headers = {
   'x-rapidapi-key': "b1556901c0mshdb68c001ae12d6ap1d57e6jsnad1a723950e1",
   'x-rapidapi-host': "community-zippopotamus.p.rapidapi.com"
@@ -34,25 +27,24 @@ def dashboard(request):
     'other': 0,
   }
   for sub in subs:
-    url = f"https://community-zippopotamus.p.rapidapi.com/us/{sub.zipcode}"
-    response = requests.request("GET", url, headers=headers)
-    results = response.json()
-    place = results['places'][0]['place name']
-    sub.placename = place
-    if sub.placename == 'Seattle':
-      city_count['seattle'] += 1
-    elif sub.placename == 'Bellevue':
-      city_count['bellevue'] += 1
-    elif sub.placename == 'Tacoma':
-      city_count['tacoma'] += 1
-    elif sub.placename == 'Shoreline':
-      city_count['shoreline'] += 1
-    else:
-      city_count['other'] += 1
-
+    if sub.zipcode != "":
+      url = f"https://community-zippopotamus.p.rapidapi.com/us/{sub.zipcode}"
+      response = requests.request("GET", url, headers=headers)
+      results = response.json()
+      place = results['places'][0]['place name']
+      sub.placename = place
+      if place == 'Seattle':
+        city_count['seattle'] += 1
+      elif place == 'Bellevue':
+        city_count['bellevue'] += 1
+      elif place == 'Tacoma':
+        city_count['tacoma'] += 1
+      elif place == 'Shoreline':
+        city_count['shoreline'] += 1
+      else:
+        city_count['other'] += 1
   return render(request, 'dashboard.html', {
     'subs' : subs,
-    'citylookup' : CITYLOOKUP,
     'city_count': city_count,
   })
 
